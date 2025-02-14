@@ -1,0 +1,33 @@
+[project]
+name = "entropix"
+version = "0.1.0"
+description = "Entropy based sampling"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "accelerate>=1.0.1",
+    "blobfile>=3.0.0",
+    "ml-dtypes>=0.5.0",
+    "jax[cuda12]",
+    "plotly>=5.24.1",
+    "rich>=13.9.3",
+    "tiktoken>=0.8.0",
+    "torch>=2.5.1",
+    "transformers>=4.46.1",
+    "tyro>=0.8.14",
+    "dash-bootstrap-components>=1.6.0",
+    "dash>=2.18.2",
+    "fastapi>=0.115.5",
+    "uvicorn>=0.32.0; sys_platform != 'win32'",
+    "uvloop>=0.21.0; sys_platform != 'win32'",
+    "openai>=1.58.1",
+]
+
+[project.scripts]
+entropix-server = "entropix.server:main"
+entropix-dashboard = "entropix.dashboard:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["entropix*"]
+
